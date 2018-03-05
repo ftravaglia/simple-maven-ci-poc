@@ -1,7 +1,6 @@
 pipeline {
     agent any
 
-    stages {
         stage('Build') {
                      def javatool = tool name: 'java', type: 'jdk'
                      def mavenhome = tool name: 'maven', type: 'maven'
@@ -23,5 +22,4 @@ pipeline {
                     }
         }
        
-    }
 }
