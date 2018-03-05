@@ -3,7 +3,6 @@ pipeline {
 
     stages {
         stage('Build') {
-            steps {
                      def javatool = tool name: 'java', type: 'jdk'
                      def mavenhome = tool name: 'maven', type: 'maven'
                      withEnv(["JAVA_HOME=${javatool}"]) {
@@ -12,10 +11,8 @@ pipeline {
                      """
         
                     }
-            }
         }
         stage('Test') {
-            steps {
                     def  javatool = tool name: 'java', type: 'jdk'
                     def  mavenhome = tool name: 'maven', type: 'maven'
                      withEnv(["JAVA_HOME=${javatool}"]) {
@@ -24,7 +21,6 @@ pipeline {
                      """
         
                     }
-            }
         }
        
     }
